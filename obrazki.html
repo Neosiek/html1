@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>  
+    <title>obrazki</title>
+    <script>
+        var obrazek = new Array("obrazek1.jpg","obrazek2.jpg","obrazek3.jpg");
+        var numer_obrazka = 1;
+        var liczba_obrazkow=obrazek.length;
+        
+        function nastepny(){
+            if(numer_obrazka < liczba_obrazkow){
+                numer_obrazka++
+            }
+            document.obraz.src=obrazek[numer_obrazka-1]
+            if(numer_obrazka >= liczba_obrazkow){
+                numer_obrazka = 0
+            }
+        }
+        function poprzedni(){
+            if(numer_obrazka <= liczba_obrazkow){
+                numer_obrazka--
+            }
+            document.obraz.src=obrazek[numer_obrazka-1]
+        }
+    </script>
+</head>
+<body style="background-color: black;">
+    
+    <input type="button" name="obraz" onclick="poprzedni();" value="poprzedni"/>
+    <input type="button" name="obraz" onclick="nastepny();"  value="nastepny"/>
+    <img src="obrazek1.jpg" name="obraz"/>
+</body>
+</html>
